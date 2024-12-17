@@ -2,7 +2,7 @@ name: Docker build & push
 on:
   # runs at 00:00, on first day of each months
   schedule:
-    - cron: "0 0 1 * *"
+    - cron: "0 0 * * *"
   push:
     branches: ["main"]
   pull_request:
@@ -11,7 +11,7 @@ on:
 env:
   REGISTRY: docker.io
   IMAGE_NAME: decobuddy/node-ng
-  TAG: 22-alpine-19
+  IMAGE_TAG: 22-alpine-19
 
 jobs:
   build:
@@ -51,6 +51,6 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.TAG }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
