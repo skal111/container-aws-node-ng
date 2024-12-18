@@ -2,7 +2,7 @@ name: Docker build & push
 on:
   # runs at 00:00, on first day of each months
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 1 * *"
   push:
     branches: ["main"]
   pull_request:
