@@ -1,11 +1,12 @@
 Builds an Alpine docker image based on
-- node:22-alpine
+
+- node:24-alpine
 
 Which contains the following
-- Angular CLI (19.x)
-- AWS CDK CLI
-- Chromium
+
+- Angular CLI (20.x)
+- AWS CDK CLI (latest)
 
 ## Pipeline
 
-The image is automatically built every month (on the very first day) and pushed to Docker Hub (decobuddy/node-ng:22-alpine-19)
+The image is automatically built every month (on the very first day) and pushed to Docker Hub (decobuddy/node-ng:24-alpine-20)
